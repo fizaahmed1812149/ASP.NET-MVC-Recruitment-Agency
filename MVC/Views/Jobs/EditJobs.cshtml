@@ -1,0 +1,29 @@
+﻿@model MVC.Models.Jobs
+@{
+    ViewBag.Title = "EditJobs";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    <table class="table">
+        <thead>
+
+            <tr><td scope="col">@Html.LabelFor(model => model.JobID) : </td><td>@Html.TextBoxFor(model => model.JobID, new { @class = "form-control" })</td></tr>
+            <tr><td scope="col">@Html.LabelFor(model => model.JobDescription) : </td><td>@Html.TextBoxFor(model => model.JobDescription, new { @class = "form-control" })</td></tr>
+            <tr><td scope="col">@Html.LabelFor(model => model.Position) : </td><td>@Html.TextBoxFor(model => model.Position, new { @class = "form-control" })</td></tr>
+            <tr><td scope="col">@Html.LabelFor(model => model.Salary) : </td><td>@Html.TextBoxFor(model => model.Salary, new { @class = "form-control" })</td></tr>
+            <tr><td scope="col">@Html.LabelFor(model => model.ExperienceRequired) : </td><td>@Html.TextBoxFor(model => model.ExperienceRequired, new { @class = "form-control" })</td></tr>
+            <tr><td scope="col">@Html.LabelFor(model => model.NoOfPositions) : </td><td>@Html.TextBoxFor(model => model.NoOfPositions, new { @class = "form-control" })</td></tr>
+            <tr><td scope="col">@Html.LabelFor(model => model.Location) : </td><td>@Html.TextBoxFor(model => model.Location, new { @class = "form-control" })</td></tr>
+            <tr><td scope="col">@Html.LabelFor(model => model.Status) : </td><td>@Html.TextBoxFor(model => model.Status, new { @class = "form-control" })</td></tr>
+            <tr><td scope="col">Actions</td><td><input type="submit" value="Save" class="btn btn-primary" /></td>
+
+
+        </thead>
+
+    </table>
+
+}
+
+

@@ -1,0 +1,40 @@
+﻿@model IEnumerable<MVC.Models.Jobs>
+@{
+    ViewBag.Title = "Job List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.JobID)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.JobDescription)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Position)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Salary)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.ExperienceRequired)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.NoOfPositions)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Location)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.Status)</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <th scope="row">@Html.DisplayFor(modelItem => item.JobID)</th>
+                <td>@Html.DisplayFor(modelItem => item.JobDescription)</td>
+                <td>@Html.DisplayFor(modelItem => item.Position)</td>
+                <td>@Html.DisplayFor(modelItem => item.Salary)</td>
+                <td>@Html.DisplayFor(modelItem => item.ExperienceRequired)</td>
+                <td>@Html.DisplayFor(modelItem => item.NoOfPositions)</td>
+                <td>@Html.DisplayFor(modelItem => item.Location)</td>
+                <td>@Html.DisplayFor(modelItem => item.Status)</td>
+            </tr>
+
+        }
+    </tbody>
+</table>
+
+
+

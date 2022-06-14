@@ -1,0 +1,37 @@
+﻿@model IEnumerable<MVC.Models.CandidateRoleMapping>
+@{
+    ViewBag.Title = "Candidate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">@Html.DisplayNameFor(model => model.candidates.CandidateID)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.candidates.CandidateName)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.candidates.ExperienceInYears)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.candidates.Qualification)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.candidates.ActiveDesignation)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.candidates.Industry)</th>
+            <th scope="col">@Html.DisplayNameFor(model => model.candidates.Status)</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th scope="row">@Html.DisplayFor(modelItem => item.candidates.CandidateID)</th>
+            <td>@Html.DisplayFor(modelItem => item.candidates.CandidateName)</td>
+            <td>@Html.DisplayFor(modelItem => item.candidates.ExperienceInYears)</td>
+            <td>@Html.DisplayFor(modelItem => item.candidates.Qualification)</td>
+            <td>@Html.DisplayFor(modelItem => item.candidates.ActiveDesignation)</td>
+            <td>@Html.DisplayFor(modelItem => item.candidates.Industry)</td>
+            <td>@Html.DisplayFor(modelItem => item.candidates.Status)</td>
+        </tr>
+           
+        }
+    </tbody>
+</table>
+

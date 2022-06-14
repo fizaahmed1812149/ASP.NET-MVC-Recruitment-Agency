@@ -1,0 +1,88 @@
+﻿@model MVC.Models.Candidates
+@{
+    ViewBag.Title = "SignUp";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2>User Registration</h2>
+
+@using (Html.BeginForm())
+{
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <td scope="col">@Html.LabelFor(model => model.CandidateName) :</td>
+                <td>
+                    @Html.TextBoxFor(model => model.CandidateName, new { @class = "form-control", required = "required" })
+                    @Html.ValidationMessageFor(model => model.CandidateName, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+           
+            <tr>
+                <td scope="col">@Html.LabelFor(model => model.Password) :</td>
+                <td>
+                    @Html.PasswordFor(model => model.Password, new { @class = "form-control", required = "required" })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td scope="col">@Html.Label("Confirm Password", new { @class = "form-label" }) :</td>
+                <td>
+                    @Html.Password("ConfirmPassword", "", new { @class = "form-control", required = "required" })
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td>@Html.Label("Role", new { @class = "form-label" })</td>
+                <td>@Html.DropDownList("RoleId", ViewBag.Roles as SelectList, "Select ...", new { @class = "form-control", required = "required", onchange = "role()" })</td>
+            </tr>
+            <tr>
+                <td scope="col">@Html.LabelFor(model => model.ExperienceInYears) :</td>
+                <td>
+                    @Html.TextBoxFor(model => model.ExperienceInYears, new { @class = "form-control", type = "number", required = "required", disabled = "disabled" })
+                    @Html.ValidationMessageFor(model => model.ExperienceInYears, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td scope="col">@Html.LabelFor(model => model.Qualification) :</td>
+                <td>
+                    @Html.TextBoxFor(model => model.Qualification, new { @class = "form-control", required = "required", disabled = "disabled" })
+                    @Html.ValidationMessageFor(model => model.Qualification, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td scope="col">@Html.LabelFor(model => model.ActiveDesignation) :</td>
+                <td>
+                    @Html.TextBoxFor(model => model.ActiveDesignation, new { @class = "form-control", required = "required", disabled = "disabled" })
+                    @Html.ValidationMessageFor(model => model.ActiveDesignation, "", new { @class = "text-danger" })
+                </td>
+            </tr>
+            <tr>
+                <td scope="col">@Html.LabelFor(model => model.Industry) :</td>
+                <td>
+                    @Html.TextBoxFor(model => model.Industry, new { @class = "form-control", required = "required", disabled = "disabled" })
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Register" class="btn btn-outline-dark" /></td>
+            </tr>
+        </tbody>
+    </table>
+
+}
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script>
+    function role() {
+        debugger
+            let role = $('#RoleId').val()
+            if (role == "2") {
+                $('#ExperienceInYears').removeAttr('disabled');
+                $('#Qualification').removeAttr('disabled');
+                $('#ActiveDesignation').removeAttr('disabled');
+                $('#Industry').removeAttr('disabled');
+            }
+        }
+
+</script>
